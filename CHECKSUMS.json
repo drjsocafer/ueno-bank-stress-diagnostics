@@ -1,0 +1,18 @@
+{
+  ".gitignore": "215af1f6c481f1a03352e99f52ba54c057d9705cb57fb24e9c1f893ecd97702c",
+  "README.md": "3570fdb0a701b5d5d45fac897880bd0c6923032d91976206c80e8b230d085c7b",
+  "Ueno_analysis.ipynb": "3afaeaf5b553f0308f2faf3f1660bba31467a9b22eed34b387e9423b65a94fcd",
+  "VALIDATION.txt": "26068afc9fdc03797652cb16b99943783fec9183a144d2500d110a983fe9df42",
+  "analysis.py": "867a84108e46aa2d4687c0a8848152f64a53484be30bc7c927d8aac01cb835c6",
+  "figures/capital_funding.svg": "929558ce958d2f35f085e6bb8307a805bb63b86980c240552577f27abc22b3bc",
+  "figures/cohort_growth.svg": "649dff6d31e945f301f19a7b86b81d08a56d9e3f6c0008da1e1b69053ae48b8d",
+  "plot_results.py": "62ae3335ebbb11f8f1b78c92ac45c8e5939d5f62204ebb75d8802a224648a2aa",
+  "requirements-plot.txt": "2279f0cdad44211740ad3c5aa8ffb93e43e63caffc39b5274b6ca4a793cc32f2",
+  "results/capital_thresholds.csv": "5aa1fc4e39f272e484db0cb8a6f875ee723ff8cfe327b7dac6fb05d3b9217c38",
+  "results/cohort_core.csv": "86ffa54f4249e63f9840fb9843ade87a05c0c5666ff90da49e7abf1ddeccf56d",
+  "results/cohort_sensitivity.csv": "455e5aa24c15beaeccdaf6b438506a09d07b853d9e5b0ce1546e9304c935d0c0",
+  "results/funding_sensitivity.csv": "27193db396183eb1492ce6da9bc7b1f340399419dd1f2733a7f16fc9e744671d",
+  "results/non_identification.csv": "b358c9900bbc40c1e771501bf50e8b4826eac652243376be0c339ebdc957ab7b",
+  "results/summary.json": "8df3ea7e755ae778df9cf265988f0be1457d5d8bfd410538e598c0e42c8711db",
+  "validate.py": "fead29b80f6f6f710f257374df0967d2abc842928b7ca656a99984433d3a196c"
+}
