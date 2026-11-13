@@ -22,7 +22,25 @@ python3 -m pip install -r requirements-plot.txt
 python3 plot_results.py
 ```
 
-Plotting was tested with matplotlib 3.9.2. `Ueno_analysis.ipynb` includes executed code, captured outputs and embedded figures for inspection without rerunning the notebook. Running it assumes the notebook's working directory is this repository's root.
+Plotting was tested with matplotlib 3.9.2. `Ueno_analysis.ipynb` includes executed code, captured outputs and links to the versioned figures for inspection without rerunning the notebook. Running it assumes the notebook's working directory is this repository's root.
+
+### Article revision: growth that the balance sheet can support
+
+The revised article adds two explicitly reproducible numbered figures and a capital-only growth budget. Run the same commands above; no additional dependencies are needed for the calculations.
+
+- **Figure 1:** `cohort_transition()` changes annual origination growth from 46.4% to 0% at month zero. New monthly lending then stays constant; existing loans amortise and new loans continue to enter. Credit quality is unchanged, while the age mix changes. `results/growth_transition.csv` records 61 monthly observations. About 90.2% of the eventual NPL-ratio rise occurs within 24 months in this synthetic configuration.
+- **Figure 2:** `results/non_identification.csv` supplies the twelve inverse-PD solutions, rendered by `plot_results.py` as `figures/figure_2_non_identification.svg`.
+- **Growth budget:** `growth_capacity()` evaluates `(capital + net retained earnings + new capital - opening corrections - other incremental losses) / (management target × opening RWA) - 1`. Retained earnings are net of tax, dividends and losses already included, so incremental losses must not be counted twice. The output is RWA growth capacity under the capital constraint alone, not loan-origination growth, a forecast or a safe-growth recommendation.
+
+For capital 15, opening RWA 100, net retained earnings 1.5, no new capital and a **synthetic management target of 15%**, capital-only RWA growth capacity is 10%. An opening correction of 1 lowers it to 3.33%; a correction of 2 produces negative capacity (-3.33%), signalling a shortfall against the chosen target. The management target is distinct from the general regulatory minimum discussed in the article.
+
+![Article Figure 1: growth transition](figures/figure_1_growth_transition.svg)
+
+![Article Figure 2: inverse default probabilities](figures/figure_2_non_identification.svg)
+
+The independent ledger now verifies all 61 transition observations as well as the original 324 configurations. Capital-budget identities and transition limiting cases are included in the seven automated model checks. No empirical validation of bank-specific behaviour is claimed.
+
+The article's proposed growth process uses capital, funding, vintage performance and operating capacity as constraints on a business plan. Suggested references are the Basel Committee's [capital planning guidance](https://www.bis.org/committees/bcbs/basel-consolidated-guidelines/module/cad/10) and [liquidity risk management guidance](https://www.bis.org/committees/bcbs/basel-consolidated-guidelines/module/lqy/10). These are international reference practices, not a statement of institution-specific legal obligations.
 
 ## What is calculated?
 

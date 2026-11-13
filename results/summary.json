@@ -109,8 +109,40 @@
     0.004994374578987411,
     0.06638255871439763
   ],
+  "growth_transition": {
+    "month_0": 0.01800845640020617,
+    "month_24": 0.022220365824425572,
+    "month_48": 0.02267590299447401,
+    "fraction_of_total_rise_after_24m": 0.9024012035600169
+  },
+  "capital_only_growth_capacity": [
+    {
+      "correction": 0,
+      "capital": 15,
+      "opening_rwa": 100,
+      "target": 0.15,
+      "retained_earnings": 1.5,
+      "max_rwa_growth": 0.10000000000000009
+    },
+    {
+      "correction": 1,
+      "capital": 15,
+      "opening_rwa": 100,
+      "target": 0.15,
+      "retained_earnings": 1.5,
+      "max_rwa_growth": 0.03333333333333344
+    },
+    {
+      "correction": 2,
+      "capital": 15,
+      "opening_rwa": 100,
+      "target": 0.15,
+      "retained_earnings": 1.5,
+      "max_rwa_growth": -0.033333333333333326
+    }
+  ],
   "fitch_ye25_capital_definition_gap_bps": 490,
   "reported_provisions_over_ye25_impaired_loans": 32.23463566744842,
-  "checks_run": 5,
+  "checks_run": 7,
   "checks_passed": true
 }

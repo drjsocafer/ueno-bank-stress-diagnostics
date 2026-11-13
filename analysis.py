@@ -57,6 +57,47 @@ def funding_ratio(ldr=.919, runoff=0.):
     if not 0 <= runoff < 1: raise ValueError('Invalid runoff')
     return ldr/(1-runoff)
 
+def cohort_transition(month, growth_before=.464, growth_after=0., term=36,
+                      lifetime_pd=.06, retention=12, scale=18., shape=2.):
+    """Monthly stock after origination growth changes at calendar month zero.
+
+    Origination at month s is (1+g_before)^(s/12) for s<=0 and
+    (1+g_after)^(s/12) for s>0. All default, amortisation and exit assumptions
+    are identical to cohort_npl. Zero growth means constant new monthly
+    lending, not a credit stop or a static total balance sheet. Quality stays
+    constant; individual loans enter and leave the portfolio over time.
+    """
+    if int(month) != month or min(growth_before,growth_after)<=-1:
+        raise ValueError('Integer month and growth above -100% required')
+    if term<1 or retention<1 or scale<=0 or shape<=0 or not 0<=lifetime_pd<=1:
+        raise ValueError('Invalid cohort parameters')
+    cdf=lambda d: 1-math.exp(-(d/scale)**shape)
+    masses=[0.]+[lifetime_pd*(cdf(d)-cdf(d-1))/cdf(term) for d in range(1,term+1)]
+    performing=npl=0.
+    for age in range(term+retention):
+        s=month-age
+        origination=(1+(growth_before if s<=0 else growth_after))**(s/12)
+        if age<term:
+            performing+=origination*(1-age/term)*(1-sum(masses[:age+1]))
+        for d in range(max(1,age-retention+1),min(age,term)+1):
+            npl+=origination*masses[d]*(term-d+1)/term
+    return npl/(performing+npl)
+
+def growth_capacity(capital=15., opening_rwa=100., target=.15,
+                    retained_earnings=1.5, correction=0., other_loss=0.,
+                    new_capital=0.):
+    """Capital-only RWA growth capacity; all amounts in consistent units.
+
+    Retained earnings must be net of tax, dividends and losses already
+    included; other_loss is incremental. Target is a chosen management
+    hurdle, not a universal legal minimum. No funding/operational constraint
+    is modelled. Negative output means contraction or additional capital is
+    needed to satisfy the target, not zero risk. Not an origination forecast.
+    """
+    if opening_rwa<=0 or target<=0: raise ValueError('Positive RWA/target required')
+    available=capital+retained_earnings+new_capital-correction-other_loss
+    return available/(target*opening_rwa)-1
+
 def write_csv(name, rows):
     with (OUT/name).open('w', newline='') as f:
         w=csv.DictWriter(f, fieldnames=list(rows[0])); w.writeheader(); w.writerows(rows)
@@ -81,6 +122,19 @@ class Checks(unittest.TestCase):
     def test_funding_identity(self):
         self.assertAlmostEqual(funding_ratio(runoff=1-.919),1)
         self.assertGreater(funding_ratio(runoff=.1),funding_ratio())
+    def test_transition_limits(self):
+        for g in [0,.464,1]:
+            for m in [-12,0,12,48]:
+                self.assertAlmostEqual(cohort_transition(m,g,g),cohort_npl(g))
+        self.assertAlmostEqual(cohort_transition(0),cohort_npl(.464))
+        self.assertAlmostEqual(cohort_transition(48),cohort_npl(0))
+    def test_growth_capacity_budget(self):
+        self.assertAlmostEqual(growth_capacity(),.1)
+        self.assertAlmostEqual(growth_capacity(correction=1),1/30)
+        self.assertLess(growth_capacity(other_loss=2),0)
+        for correction in [0,1,2]:
+            g=growth_capacity(correction=correction)
+            self.assertAlmostEqual((15+1.5-correction)/(100*(1+g)),.15)
 
 def main():
     suite=unittest.defaultTestLoader.loadTestsFromTestCase(Checks)
@@ -115,6 +169,12 @@ def main():
         fitted.append(dict(retention_months=window,weibull_scale=scale,
                            implied_lifetime_pd=(lo+hi)/2))
     write_csv('non_identification.csv',fitted)
+    transition=[dict(month=m,years=m/12,npl_ratio=cohort_transition(m)) for m in range(-12,49)]
+    write_csv('growth_transition.csv',transition)
+    capacity=[dict(correction=d,capital=15,opening_rwa=100,target=.15,
+                   retained_earnings=1.5,max_rwa_growth=growth_capacity(correction=d))
+              for d in [0,1,2]]
+    write_csv('growth_capacity.csv',capacity)
     rel=[]
     for term,pd,window,scale in itertools.product([24,36,60],[.02,.06,.10],[3,6,12,24],[9.,18.,30.]):
         base=cohort_npl(0,term,pd,window,scale)
@@ -124,6 +184,10 @@ def main():
        cohort_core=core,relative_change_growth_46_4_pct=[min(rel),max(rel)],
        capital_thresholds=capital,funding_sensitivity=funding,
        pd_fitting_0_4_pct_range=[min(x['implied_lifetime_pd'] for x in fitted),max(x['implied_lifetime_pd'] for x in fitted)],
+       growth_transition=dict(month_0=cohort_transition(0),month_24=cohort_transition(24),
+          month_48=cohort_transition(48),fraction_of_total_rise_after_24m=
+          (cohort_transition(24)-cohort_transition(0))/(cohort_transition(48)-cohort_transition(0))),
+       capital_only_growth_capacity=capacity,
        fitch_ye25_capital_definition_gap_bps=round((.152-.103)*10000),
        reported_provisions_over_ye25_impaired_loans=1_621_853_458_972/(50_314*1e6),
        checks_run=result.testsRun,checks_passed=result.wasSuccessful())

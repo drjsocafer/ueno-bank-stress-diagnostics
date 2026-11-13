@@ -53,3 +53,48 @@ fig.text(.08,.115,'Right: June 2026 L/D of 91.9% (Fitch, 16 Oct). Hypothetical d
 fig.text(.08,.08,'Loans held constant; no asset sales, inflows or replacement funding. L/D above 100% is not a liquidity-failure test.',fontsize=10)
 fig.savefig(FIG/'capital_funding.png',dpi=180); fig.savefig(FIG/'capital_funding.svg'); plt.close(fig)
 print('Rendered 2 figures.')
+
+# The two numbered figures used in the revised LinkedIn article.
+with (ROOT/'results/growth_transition.csv').open() as f:
+ transition=list(csv.DictReader(f))
+fig,ax=plt.subplots(figsize=(12,6.4))
+xx=[float(r['years']) for r in transition]
+yy=[float(r['npl_ratio'])*100 for r in transition]
+ax.plot(xx,yy,color=colors[0],lw=2.5)
+ax.axvline(0,color='#738a86',lw=1.2,ls='--')
+ax.text(.03,2.44,'Origination growth changes',fontsize=10)
+ax.scatter([xx[0],xx[-1]],[yy[0],yy[-1]],color=colors[0],s=30)
+ax.annotate(f'{yy[0]:.2f}%',(xx[0],yy[0]),xytext=(0,12),textcoords='offset points',ha='left')
+ax.annotate(f'{yy[-1]:.2f}%',(xx[-1],yy[-1]),xytext=(0,12),textcoords='offset points',ha='right')
+ax.set_xticks([-1,0,1,2,3,4]); ax.set_ylim(0,2.65)
+ax.set_ylabel('Simulated NPL / gross loans (%)'); ax.set_xlabel('Years since origination growth changed to 0%')
+ax.set_title('When growth stops, the NPL ratio can rise.',loc='left',pad=25,fontsize=18)
+fig.subplots_adjust(left=.09,right=.97,top=.83,bottom=.26)
+fig.text(.09,.135,'Figure 1 | Annual origination growth 46.4% before month 0, then constant monthly new lending.',fontsize=10)
+fig.text(.09,.09,'3-year loans; lifetime PD 6%; NPL retention 12 months; Weibull timing (shape 2, scale 18 months).',fontsize=10)
+fig.text(.09,.045,'Credit quality is unchanged. Portfolio composition changes. Synthetic model; no bank calibration.',fontsize=10)
+fig.savefig(FIG/'figure_1_growth_transition.png',dpi=180)
+fig.savefig(FIG/'figure_1_growth_transition.svg'); plt.close(fig)
+
+with (ROOT/'results/non_identification.csv').open() as f:
+ fits=list(csv.DictReader(f))
+fig,ax=plt.subplots(figsize=(12,6.4))
+for i,window in enumerate([3,6,12,24]):
+ rows=[r for r in fits if int(r['retention_months'])==window]
+ vals=[float(r['implied_lifetime_pd'])*100 for r in rows]
+ ax.plot([min(vals),max(vals)],[i,i],color='#a7b9b4',lw=3)
+ ax.scatter(vals,[i]*3,color=colors[0],s=40,zorder=3)
+ ax.text(min(vals)-.1,i,f'{min(vals):.1f}%',ha='right',va='center',fontsize=11)
+ ax.text(max(vals)+.1,i,f'{max(vals):.1f}%',ha='left',va='center',fontsize=11)
+ax.set_yticks(range(4),['3 months','6 months','12 months','24 months']); ax.invert_yaxis()
+ax.set_xlim(0,7.4); ax.set_ylim(3.5,-.7)
+ax.set_xlabel('Implied lifetime default probability (%)')
+ax.set_ylabel('Time defaulted principal stays in the gross book')
+ax.set_title('One reported ratio, many possible credit qualities',loc='left',pad=25,fontsize=17)
+fig.subplots_adjust(left=.19,right=.97,top=.83,bottom=.25)
+fig.text(.19,.13,'Figure 2 | PD values consistent with 0.4% NPL stock; 3-year loans; 46.4% origination growth.',fontsize=10)
+fig.text(.19,.08,'Each row uses Weibull timing scales 9, 18 and 30 months (shape 2); equal-principal amortisation.',fontsize=10)
+fig.text(.19,.035,'Alternative configurations, not a confidence interval or estimates of any bank\'s true default rate.',fontsize=10)
+fig.savefig(FIG/'figure_2_non_identification.png',dpi=180)
+fig.savefig(FIG/'figure_2_non_identification.svg'); plt.close(fig)
+print('Rendered article Figures 1 and 2 from the published CSV data.')
