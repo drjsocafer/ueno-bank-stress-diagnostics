@@ -1,6 +1,6 @@
 PASS: 7 model checks in analysis.py.
 PASS: independent time-forward ledger matches all 324 cohort specifications.
 Maximum absolute NPL ratio difference: 5.13e-16
-PASS: 12 reverse-PD solutions have maximum residual 1.73e-18.
+PASS: 12 reverse-PD solutions have maximum residual 1.46e-14.
 PASS: 61 monthly transition values agree with the independent ledger; maximum error 6.59e-17.
 Domain and monotonicity checks passed. No bank calibration or empirical forecast validation is claimed.

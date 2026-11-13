@@ -98,9 +98,18 @@ def growth_capacity(capital=15., opening_rwa=100., target=.15,
     available=capital+retained_earnings+new_capital-correction-other_loss
     return available/(target*opening_rwa)-1
 
+def clean(x):
+    """Round floats to 12 significant digits so outputs are identical across
+    platforms; last-digit floating-point noise otherwise changes file hashes."""
+    if isinstance(x, float): return float(format(x, '.12g'))
+    if isinstance(x, dict): return {k: clean(v) for k, v in x.items()}
+    if isinstance(x, (list, tuple)): return [clean(v) for v in x]
+    return x
+
 def write_csv(name, rows):
     with (OUT/name).open('w', newline='') as f:
-        w=csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator='\n'); w.writeheader(); w.writerows(rows)
+        w=csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator='\n')
+        w.writeheader(); w.writerows(clean(r) for r in rows)
 
 class Checks(unittest.TestCase):
     def test_capital_identity_and_inversion(self):
@@ -189,8 +198,8 @@ def main():
           (cohort_transition(24)-cohort_transition(0))/(cohort_transition(48)-cohort_transition(0))),
        capital_only_growth_capacity=capacity,
        fitch_ye25_capital_definition_gap_bps=round((.152-.103)*10000),
-       reported_provisions_over_ye25_impaired_loans=1_621_853_458_972/(50_314*1e6),
        checks_run=result.testsRun,checks_passed=result.wasSuccessful())
+    summary=clean(summary)
     (OUT/'summary.json').write_text(json.dumps(summary,indent=2))
     print(json.dumps(summary,indent=2))
 

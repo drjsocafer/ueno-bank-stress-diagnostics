@@ -22,6 +22,8 @@ python3 -m pip install -r requirements-plot.txt
 python3 plot_results.py
 ```
 
+Integrity: `CHECKSUMS.json` lists SHA-256 hashes of the committed files. Output CSV and JSON files are written with LF line endings and floats rounded to 12 significant digits, so rerunning the calculations should reproduce them byte for byte on any platform. The SVG figures are rendered by matplotlib and embed renderer-specific details, so their hashes are not expected to match on another machine or matplotlib build; compare them visually or regenerate them from the CSV files. If a CSV hash differs, compare the numbers.
+
 Plotting was tested with matplotlib 3.9.2. `Ueno_analysis.ipynb` includes executed code, captured outputs and links to the versioned figures for inspection without rerunning the notebook. Running it assumes the notebook's working directory is this repository's root.
 
 ### Comparative case: Nubank
@@ -91,6 +93,13 @@ With 6% lifetime default probability, a 36-month term, 12-month default retentio
 | [Fitch report, 16 October 2026; issuer-hosted copy](https://www.ueno.com.py/inversores/wp-content/uploads/sites/3/2026/10/Risk-Rating-Report-%E2%80%93-Fitch-Ratings-%E2%80%93-October-2026.pdf) | Adjusted capital definition and June 2026 loans/deposits ratio |
 | [BCP Financial Stability Report, May 2026](https://www.bcp.gov.py/en/web/institucional/w/informe-de-estabilidad-financiera-mayo-2026) | Context for the general total regulatory capital minimum |
 | [Basel Committee stress-testing principles, RMA30](https://www.bis.org/committees/bcbs/basel-consolidated-guidelines/module/rma/30) | Data quality, granularity and acquisition-data integration as reference principles |
+| [Basel Committee, Principles for operational resilience](https://www.bis.org/publications/202103-guidelines-principles-operational-resilience) | Reference for operational resilience of critical services |
+| [Basel Committee, Capital planning, CAD10](https://www.bis.org/committees/bcbs/basel-consolidated-guidelines/module/cad/10) | Reference for capital planning and management targets above requirements |
+| [Basel Committee, Liquidity risk management and supervision, LQY10](https://www.bis.org/committees/bcbs/basel-consolidated-guidelines/module/lqy/10) | Reference for liquidity risk management |
+| [BCP advance-payment arrangements, 4 November 2026](https://www.bcp.gov.py/web/institucional/w/pago-del-anticipo-de-la-garantia-del-fondo-de-garantia-de-depositos-a-los-ahorristas-de-ueno-bank-s.a.) | Account opening for depositors without another account |
+| [ABC Color, 11 November 2026](https://www.abc.com.py/economia/2026/11/11/ahorristas-de-ueno-bcp-dice-que-culmino-el-proceso-de-acreditacion-al-100-de-beneficiarios-pero-persisten-bloqueos/) | Report of the BCP press conference: advance-payment completion and certificate-of-deposit validation (secondary source) |
+| [El Cronista](https://www.cronista.com/finanzas-mercados/paraguay-interviene-ueno-bank-el-quinto-banco-privado-del-pais-con-3-millones-de-clientes-entra-en-resolucion-por-falta-de-solvencia/) and [La Nación, 4 November 2026](https://www.lanacion.com.ar/economia/que-paso-con-ueno-bank-en-paraguay-todos-los-detalles-del-colapso-que-puso-en-alerta-el-sistema-nid04112026/) | Press-reported adjusted solvency ratio of 5.56% and provisions above Gs 1.6 trillion; reported, not confirmed, and not computed in this repository |
+| Nu Holdings releases and SEC filings | See `data/nu_sources.json` and `COMPARATOR.md` |
 
 Only original code, synthetic calculations and derived outputs are included. No internal bank or employer data, private correspondence, unpublished editorial review or third-party report copies are included.
 

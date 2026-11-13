@@ -12,7 +12,7 @@ s=json.loads((ROOT/'results/summary.json').read_text())
 plt.rcParams.update({'font.family':'DejaVu Sans','font.size':12,'axes.spines.top':False,
  'axes.spines.right':False,'axes.titleweight':'bold','figure.facecolor':'#f6f7f5',
  'axes.facecolor':'#f6f7f5','text.color':'#123c40','axes.labelcolor':'#123c40',
- 'xtick.color':'#34565a','ytick.color':'#34565a'})
+ 'xtick.color':'#34565a','ytick.color':'#34565a','svg.hashsalt':'ueno-results'})
 colors=['#17646b','#97b4ad','#d7a45e']
 
 fig,ax=plt.subplots(figsize=(12,6.4))
@@ -30,7 +30,7 @@ ax.legend(frameon=False,loc='upper right',fontsize=11)
 fig.subplots_adjust(left=.09,right=.97,top=.83,bottom=.25)
 fig.text(.09,.115,'Synthetic cohort model | 6% lifetime default probability | 12-month NPL retention',fontsize=11)
 fig.text(.09,.067,'Equal-principal amortisation; Weibull default timing (shape 2, scale 18 months). No bank calibration.',fontsize=10)
-fig.savefig(FIG/'cohort_growth.png',dpi=180); fig.savefig(FIG/'cohort_growth.svg'); plt.close(fig)
+fig.savefig(FIG/'cohort_growth.png',dpi=180); fig.savefig(FIG/'cohort_growth.svg',metadata={'Date':None}); plt.close(fig)
 
 fig,axes=plt.subplots(1,2,figsize=(12,6.4),gridspec_kw={'wspace':.35})
 ax=axes[0]
@@ -51,7 +51,7 @@ fig.subplots_adjust(left=.08,right=.97,top=.78,bottom=.27)
 fig.text(.08,.15,'Left: synthetic 15% opening capital ratio, 12% target, no scenario losses. This is not Ueno capital.',fontsize=10)
 fig.text(.08,.115,'Right: June 2026 L/D of 91.9% (Fitch, 16 Oct). Hypothetical deposit outflows; loans unchanged.',fontsize=10)
 fig.text(.08,.08,'Loans held constant; no asset sales, inflows or replacement funding. L/D above 100% is not a liquidity-failure test.',fontsize=10)
-fig.savefig(FIG/'capital_funding.png',dpi=180); fig.savefig(FIG/'capital_funding.svg'); plt.close(fig)
+fig.savefig(FIG/'capital_funding.png',dpi=180); fig.savefig(FIG/'capital_funding.svg',metadata={'Date':None}); plt.close(fig)
 print('Rendered 2 figures.')
 
 # The two numbered figures used in the revised LinkedIn article.
@@ -74,7 +74,7 @@ fig.text(.09,.135,'Figure 1 | Annual origination growth 46.4% before month 0, th
 fig.text(.09,.09,'3-year loans; lifetime PD 6%; NPL retention 12 months; Weibull timing (shape 2, scale 18 months).',fontsize=10)
 fig.text(.09,.045,'Credit quality is unchanged. Portfolio composition changes. Synthetic model; no bank calibration.',fontsize=10)
 fig.savefig(FIG/'figure_1_growth_transition.png',dpi=180)
-fig.savefig(FIG/'figure_1_growth_transition.svg'); plt.close(fig)
+fig.savefig(FIG/'figure_1_growth_transition.svg',metadata={'Date':None}); plt.close(fig)
 
 with (ROOT/'results/non_identification.csv').open() as f:
  fits=list(csv.DictReader(f))
@@ -96,5 +96,5 @@ fig.text(.19,.13,'Figure 2 | PD values consistent with 0.4% NPL stock; 3-year lo
 fig.text(.19,.08,'Each row uses Weibull timing scales 9, 18 and 30 months (shape 2); equal-principal amortisation.',fontsize=10)
 fig.text(.19,.035,'Alternative configurations, not a confidence interval or estimates of any bank\'s true default rate.',fontsize=10)
 fig.savefig(FIG/'figure_2_non_identification.png',dpi=180)
-fig.savefig(FIG/'figure_2_non_identification.svg'); plt.close(fig)
+fig.savefig(FIG/'figure_2_non_identification.svg',metadata={'Date':None}); plt.close(fig)
 print('Rendered article Figures 1 and 2 from the published CSV data.')

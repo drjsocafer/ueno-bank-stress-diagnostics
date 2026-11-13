@@ -1,5 +1,5 @@
 """Build an executed, portable notebook from the repository's actual code."""
-import contextlib, io, json, os, sys
+import contextlib, io, json, os, re, sys
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parent
@@ -12,7 +12,9 @@ def execute(source,count):
     ns={'__name__':'__main__','__file__':str(ROOT/'analysis.py')}
     with contextlib.redirect_stdout(stdout),contextlib.redirect_stderr(stderr):
         exec(compile(source,str(ROOT/'Ueno_analysis.ipynb'),'exec'),ns)
-    outputs=[dict(output_type='stream',name=n,text=s.getvalue().splitlines(True))
+    # Test-run timings differ on every run; drop them so the notebook is reproducible.
+    scrub=lambda text: re.sub(r'(Ran \d+ tests?) in [0-9.]+s',r'\1',text)
+    outputs=[dict(output_type='stream',name=n,text=scrub(s.getvalue()).splitlines(True))
              for n,s in [('stdout',stdout),('stderr',stderr)] if s.getvalue()]
     return dict(cell_type='code',metadata={},execution_count=count,
                 source=source.splitlines(True),outputs=outputs)
