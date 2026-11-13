@@ -5,10 +5,12 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
 from comparator import load_observations, summarise
+from earnings_sensitivity import observations, calculate
 
 ROOT = Path(__file__).resolve().parent
 data = load_observations()
 summary = summarise(data)
+earnings = calculate(observations())
 
 plt.rcParams.update({'font.family': 'DejaVu Sans', 'font.size': 12,
     'axes.spines.top': False, 'axes.spines.right': False,
@@ -27,7 +29,7 @@ for offset, metric, label, color in [(-.19, 'credit_growth', 'Credit cards + loa
 left.set_xticks(x, ['2023', '2024', '2025'])
 left.set_ylim(0, 68)
 left.set_ylabel('Year-on-year growth, FX-neutral (%)')
-left.set_title('Rapid credit expansion over three years', loc='left', fontsize=13, pad=18)
+left.set_title('Credit and deposit growth', loc='left', fontsize=15, pad=18)
 left.legend(frameon=False, loc='upper left', fontsize=10)
 values = [data['FY2025', k]['value'] for k in ('available_funding', 'net_credit_portfolio')]
 bars = right.barh([1, 0], values, color=['#17646b', '#a3bbb2'], height=.48)
@@ -36,21 +38,21 @@ right.set_yticks([1, 0], ['Available\nfunding', 'Net credit\nportfolio'])
 right.set_xlim(0, 48)
 right.set_ylim(-.65, 2.1)
 right.set_xlabel('US$ billion at year-end 2025')
-right.set_title('Resources alongside the growth', loc='left', fontsize=13, pad=18)
+right.set_title('Reported funding resources', loc='left', fontsize=15, pad=18)
 right.text(0, 1.75, f"{summary['FY2025_available_funding_to_net_credit']:.2f}×", fontsize=29,
            fontweight='bold', va='center')
 right.text(17, 1.75, 'funding / net credit\nmanagement definitions', fontsize=10, va='center')
-fig.suptitle('Nubank: rapid growth alongside earnings and funding',
+fig.suptitle('Nu Holdings: growth and reported resources',
              x=.07, y=.96, ha='left', fontsize=18, fontweight='bold')
-fig.text(.07, .90, 'Figure 3  |  Nu Holdings consolidated  |  Historical observations, not a matched control', fontsize=11)
+fig.text(.07, .90, 'Figure 3  |  Consolidated group  |  Historical comparator with distinct definitions', fontsize=12)
 fig.subplots_adjust(left=.07, right=.96, top=.78, bottom=.38)
 fig.text(.07, .29, 'Annual net income (reported US$):  $1.03bn in 2023   →   $1.97bn in 2024   →   $2.9bn in 2025',
          fontsize=12, fontweight='bold')
-fig.text(.07, .22, 'Latest check · Q3 2026: credit +33% vs deposits +19% YoY (FXN).', fontsize=11)
-fig.text(.07, .18, 'Reported 90+ day NPL: 7.3%, up from 6.9% in Q2. Strong growth still requires credit scrutiny.', fontsize=11)
-fig.text(.07, .115, 'Sources: Nu FY2024 and FY2025 releases; Q3 2026 SEC filings (12 Nov). Data and calculations in the repository.', fontsize=9)
-fig.text(.07, .08, 'FX-neutral growth is reported directly, not calculated from USD balances. Funding coverage is not a regulatory liquidity ratio.', fontsize=9)
-fig.text(.07, .045, 'Nu group scope, products and 90+ day NPL definition differ from ueno bank. Cross-bank NPL and funding ratios are not ranked.', fontsize=9)
+fig.text(.07, .22, 'Q3 2026 · Credit +33% vs deposits +19% YoY (FXN); 90+ day NPL 7.3% vs 6.9% in Q2.', fontsize=12)
+ratios=earnings['managerial_ratios_separate_basis']
+fig.text(.07, .17, f"Managerial credit cost / credit income: {ratios[0]['cost_of_credit_over_credit_income']:.1%} → {ratios[1]['cost_of_credit_over_credit_income']:.1%} YoY.", fontsize=12)
+fig.text(.07, .095, 'Sources: Nu FY2024–2025 releases and Q3 2026 SEC filings. Data and definitions in the repository.', fontsize=10)
+fig.text(.07, .05, 'Funding coverage is not a regulatory liquidity ratio. NPL definitions and group scope differ from ueno bank.', fontsize=10)
 for ext in ('png', 'svg'):
     fig.savefig(ROOT / f'figures/figure_3_nu_comparator.{ext}', dpi=180,
                 metadata={'Date': None} if ext == 'svg' else {})

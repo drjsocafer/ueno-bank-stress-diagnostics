@@ -42,7 +42,7 @@ L 148.153701 336.384
 L 148.153701 150.851368 
 L 83.993501 150.851368 
 z
-" clip-path="url(#p299cef1182)" style="fill: #17646b"/>
+" clip-path="url(#pb7e472095e)" style="fill: #17646b"/>
    </g>
    <g id="patch_4">
     <path d="M 200.648411 336.384 
@@ -50,7 +50,7 @@ L 264.808611 336.384
 L 264.808611 225.064421 
 L 200.648411 225.064421 
 z
-" clip-path="url(#p299cef1182)" style="fill: #17646b"/>
+" clip-path="url(#pb7e472095e)" style="fill: #17646b"/>
    </g>
    <g id="patch_5">
     <path d="M 317.30332 336.384 
@@ -58,7 +58,7 @@ L 381.46352 336.384
 L 381.46352 336.384 
 L 317.30332 336.384 
 z
-" clip-path="url(#p299cef1182)" style="fill: #17646b"/>
+" clip-path="url(#pb7e472095e)" style="fill: #17646b"/>
    </g>
    <g id="matplotlib.axis_1">
     <g id="xtick_1">
@@ -1737,7 +1737,7 @@ z
 L 600.103985 269.082947 
 L 674.471489 231.936 
 L 823.206499 143.712 
-" clip-path="url(#pf639ad49e2)" style="fill: none; stroke: #17646b; stroke-width: 2; stroke-linecap: square"/>
+" clip-path="url(#p307281a48f)" style="fill: none; stroke: #17646b; stroke-width: 2; stroke-linecap: square"/>
     <defs>
      <path id="mc8ea000de4" d="M 0 3.5 
 C 0.928211 3.5 1.81853 3.131218 2.474874 2.474874 
@@ -1751,7 +1751,7 @@ C -1.81853 3.131218 -0.928211 3.5 0 3.5
 z
 " style="stroke: #17646b"/>
     </defs>
-    <g clip-path="url(#pf639ad49e2)">
+    <g clip-path="url(#p307281a48f)">
      <use xlink:href="#mc8ea000de4" x="525.73648" y="302.5152" style="fill: #17646b; stroke: #17646b"/>
      <use xlink:href="#mc8ea000de4" x="600.103985" y="269.082947" style="fill: #17646b; stroke: #17646b"/>
      <use xlink:href="#mc8ea000de4" x="674.471489" y="231.936" style="fill: #17646b; stroke: #17646b"/>
@@ -1761,7 +1761,7 @@ z
    <g id="line2d_24">
     <path d="M 510.862979 246.528 
 L 838.08 246.528 
-" clip-path="url(#pf639ad49e2)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #a04a3b"/>
+" clip-path="url(#p307281a48f)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #a04a3b"/>
    </g>
    <g id="patch_9">
     <path d="M 510.862979 336.384 
@@ -2684,10 +2684,10 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p299cef1182">
+  <clipPath id="pb7e472095e">
    <rect x="69.12" y="101.376" width="327.217021" height="235.008"/>
   </clipPath>
-  <clipPath id="pf639ad49e2">
+  <clipPath id="p307281a48f">
    <rect x="510.862979" y="101.376" width="327.217021" height="235.008"/>
   </clipPath>
  </defs>

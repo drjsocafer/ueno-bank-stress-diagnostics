@@ -1,0 +1,7 @@
+period,metric,value,unit,scope,basis,source_id
+Q32025,credit_income,2489.2,USD_million,Nu Holdings consolidated,managerial_quarterly_reported,NU_Q326
+Q32025,cost_of_credit,1035.8,USD_million,Nu Holdings consolidated,managerial_quarterly_expense_positive,NU_Q326
+Q32026,credit_income,3795.1,USD_million,Nu Holdings consolidated,managerial_quarterly_reported,NU_Q326
+Q32026,cost_of_credit,1788.7,USD_million,Nu Holdings consolidated,managerial_quarterly_expense_positive,NU_Q326
+Q32026,ecl_expense,1668.5,USD_million,Nu Holdings consolidated,IFRS_quarterly_expense_positive,NU_Q326
+Q32026,profit_before_tax,1350.3,USD_million,Nu Holdings consolidated,IFRS_quarterly_reported,NU_Q326
