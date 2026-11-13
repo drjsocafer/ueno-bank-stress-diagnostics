@@ -41,6 +41,11 @@ def load_observations():
 def summarise(observations):
     def value(period, metric):
         return observations[period, metric]['value']
+    def ratio(period, numerator, denominator):
+        a, b = observations[period, numerator], observations[period, denominator]
+        if (a['scope'], a['unit'], a['basis']) != (b['scope'], b['unit'], b['basis']):
+            raise ValueError(f'Ratio {numerator}/{denominator} mixes scope, units or basis')
+        return a['value'] / b['value']
     funding = observations['FY2025', 'available_funding']
     credit = observations['FY2025', 'net_credit_portfolio']
     if (funding['scope'], funding['unit'], funding['basis']) != (
@@ -56,6 +61,19 @@ def summarise(observations):
             value('Q32026', 'credit_growth') - value('Q32026', 'deposit_growth')),
         'Q32026_reported_90plus_NPL_change_bps': round(100 * (
             value('Q32026', 'npl_90_plus') - value('Q22026', 'npl_90_plus')), 10),
+        'Q3_credit_growth_percent_FXN': {
+            p: value(p, 'credit_growth') for p in ('Q32025', 'Q32026')},
+        'Q3_reported_90plus_NPL_percent': {
+            p: value(p, 'npl_90_plus') for p in ('Q32025', 'Q32026')},
+        'Q3_cost_of_credit_to_credit_income': {
+            p: ratio(p, 'cost_of_credit', 'credit_income') for p in ('Q32025', 'Q32026')},
+        'Q3_total_portfolio_to_deposits': {
+            p: ratio(p, 'total_portfolio', 'deposits') for p in ('Q32025', 'Q32026')},
+        'Q32026_credit_income_share_of_managerial_revenue': ratio(
+            'Q32026', 'credit_income', 'total_revenue_managerial'),
+        'Q32026_ifrs_ecl_increase_to_zero_pretax_profit': ratio(
+            'Q32026', 'profit_before_tax_ifrs', 'expected_credit_loss_ifrs'),
+        'Q32026_coverage_of_90plus_NPL_percent': value('Q32026', 'coverage_90_plus'),
         'interpretation': 'Descriptive comparator; no regulatory liquidity ratio, '
                           'matched control, causal estimate or assurance of future resilience.'
     }

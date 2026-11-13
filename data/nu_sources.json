@@ -18,13 +18,19 @@
       "title": "Nu Holdings Q3 2026 financial results, SEC Form 6-K",
       "published": "2026-11-12",
       "url": "https://www.sec.gov/Archives/edgar/data/1691493/000129281426005273/nupr3q26_6k.htm",
-      "location": "Q3 2026 snapshot: credit portfolio, asset quality and funding"
+      "location": "Q3 2026 snapshot (credit portfolio, asset quality, funding); consolidated operating and financial metrics tables; managerial and accounting P&L for Q3'26 and Q3'25"
     },
     "NU_Q326_PRESENTATION": {
       "title": "Nu Holdings Q3 2026 earnings presentation, SEC Form 6-K",
       "published": "2026-11-12",
       "url": "https://www.sec.gov/Archives/edgar/data/1691493/000129281426005275/nu20261112_6k.htm",
       "location": "Asset quality, page 16: NPL 90+ history and scope note; glossary page 35: consumer definition; page 25: funding definitions"
+    },
+    "NU_Q325": {
+      "title": "Nu Holdings Q3 2025 financial results",
+      "published": "2025-11-13",
+      "url": "https://nu.com/newsroom/company/nu-holdings-ltd-reports-third-quarter-2025-financial-results",
+      "location": "Q3'25 Results Snapshot: total credit portfolio growth, FX-neutral"
     }
   }
 }

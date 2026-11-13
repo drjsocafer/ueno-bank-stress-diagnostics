@@ -17,11 +17,19 @@ These observations suggest questions a growth plan should answer: can earnings s
 - Nu is a consolidated group with different jurisdictions and products; ueno's 46.4% is a reported gross-loan growth observation for one Paraguayan bank. Nu's reported FX-neutral rates are indicative of a similar order of growth, not a harmonised cross-bank comparison. Never derive those rates from successive nominal USD balances.
 - Available funding and net credit are management-defined amounts. Nu's presentation defines available funding as deposits less compulsory deposits plus financial bills; net credit nets credit-card-network payables from credit-card receivables and loans. Coverage is not cash, an LCR, an NSFR or a liquidity survival horizon, and is not compared directly with ueno's gross loans/customer deposits.
 - Nu's Reported 90+ day NPL stock and ueno's 60-day NPL observation differ in scope, classification and portfolio mix. Figure 3 therefore does not place them on the same risk axis.
-- Full-year reported net income is used. Nu's FY2025 managerial presentation reorganises revenue/cost categories while preserving net income; those revenue/cost series are not spliced into this comparison. FY2025 net income has the source's rounded precision.
+- Full-year reported net income is used. Nu's FY2025 managerial presentation reorganises revenue/cost categories while preserving net income; those revenue/cost series are not spliced into this comparison. The Q3 ratios use the Q3 2026 release only, which presents Q3 2025 on the same managerial basis. FY2025 net income has the source's rounded precision.
 - A favourable historical example can invite hindsight and survivor bias. The selection is illustrative, not a representative sample of digital banks. Controls, underwriting quality and execution would require further evidence.
 
-## Latest evidence prevents an unconditional success story
+## Q3 2026: the same growth signature, different buffers
 
-In Q3 2026, credit still grew 33% YoY versus deposits at 19%, both FX-neutral. Reported 90+ day NPL rose from 6.9% in Q2 to 7.3% in Q3 (+40 basis points). Deposit growth did not always exceed credit growth in the annual series either. Reported resources must therefore be monitored alongside vintage losses and funding composition; this comparator is not an assurance of continuing resilience.
+The article contrasts Nu with ueno on which risks were visible, priced and funded, not on which bank looked healthier. All Q3 figures below come from the Q3 2026 release (`NU_Q326`) except Q3 2025 credit growth (`NU_Q325`); ratios are computed in `comparator.py` from same-basis observations only.
+
+- Credit grew 33% YoY against deposits at 19%, both FX-neutral; credit growth was 42% a year earlier. Reported 90+ day NPL rose from 6.7% in Q3 2025 and 6.9% in Q2 2026 to 7.3%.
+- Total portfolio to deposits rose from 78.4% to 87.6% in a year. Card receivables are partly funded by payables to card networks, so this is a direction-of-travel indicator, not a loans/deposits or regulatory liquidity ratio.
+- Managerial cost of credit rose from 41.6% to 47.1% of credit income: losses are growing faster than the revenue that pays for them.
+- IFRS expected credit losses of US$1,668.5m compare with IFRS profit before tax of US$1,350.3m; losses would have to rise by about 81% before the quarter turned loss-making, all else equal. Coverage of 90+ NPLs was 234%.
+- Credit income was 60.6% of managerial revenue.
+
+Slowing growth with a rising 90+ ratio is the direction the synthetic cohort model predicts from seasoning alone, but Nu also reports deliberate underwriting expansions (`NU_Q326_PRESENTATION`, NPL bridge). Only vintage data can separate the two. The comparator is not an assurance of continuing resilience.
 
 The script checks source dates, duplicate observations, units, growth basis and metric scope before performing arithmetic. These checks establish internal data consistency, not an audit of issuer disclosures or an empirical validation of the synthetic ueno diagnostics.
