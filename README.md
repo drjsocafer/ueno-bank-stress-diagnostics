@@ -24,6 +24,19 @@ python3 plot_results.py
 
 Plotting was tested with matplotlib 3.9.2. `Ueno_analysis.ipynb` includes executed code, captured outputs and links to the versioned figures for inspection without rerunning the notebook. Running it assumes the notebook's working directory is this repository's root.
 
+### Comparative case: Nubank
+
+The article now includes a short historical comparator, with sourced observations separated from the synthetic models. Nu reported FX-neutral credit-card and loan growth of 47%, 45% and 40% in 2023–2025, alongside annual profits and reported funding/capital resources. Its latest Q3 2026 disclosure also shows higher 90+ day NPLs and credit growth exceeding deposit growth. This is an informative example with explicit limits, not a matched control or proof of future safety.
+
+```sh
+python3 comparator.py
+python3 plot_comparator.py
+```
+
+The first command uses only the standard library. The second uses the same optional plotting dependency as the existing figures. [COMPARATOR.md](COMPARATOR.md) explains metric scope, FX neutrality, funding definitions and selection limits; [data/nu_sources.json](data/nu_sources.json) links every primary source. The inputs and derived arithmetic are versioned separately. No cross-bank NPL or liquidity-ratio ranking is made.
+
+![Article Figure 3: Nu comparator](figures/figure_3_nu_comparator.svg)
+
 ### Article revision: growth that the balance sheet can support
 
 The revised article adds two explicitly reproducible numbered figures and a capital-only growth budget. Run the same commands above; no additional dependencies are needed for the calculations.

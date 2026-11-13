@@ -1,0 +1,30 @@
+{
+  "cutoff": "2026-11-12",
+  "retrieved": "2026-11-13",
+  "sources": {
+    "NU_FY24": {
+      "title": "Nu Holdings Q4 and FY2024 earnings release",
+      "published": "2025-02-20",
+      "url": "https://api.mziq.com/mzfilemanager/v2/d/59a081d2-0d63-4bb5-b786-4c07ae26bc74/96c63db0-9faa-9fc7-3818-1193f09600a8?origin=1",
+      "location": "PDF pages 3-4 (zero-based pages 2-3): consolidated operating metrics, FX-neutral rows; financial metrics, reported net income rows"
+    },
+    "NU_FY25": {
+      "title": "Nu Holdings Q4 and FY2025 financial results",
+      "published": "2026-02-25",
+      "url": "https://nu.com/en/newsroom/company/nu-holdings-ltd-reports-fourth-quarter-and-full-year-2025-financial-results",
+      "location": "Financial Highlights: Profitability; Balance Sheet and Funding; footnotes 1-2"
+    },
+    "NU_Q326": {
+      "title": "Nu Holdings Q3 2026 financial results, SEC Form 6-K",
+      "published": "2026-11-12",
+      "url": "https://www.sec.gov/Archives/edgar/data/1691493/000129281426005273/nupr3q26_6k.htm",
+      "location": "Q3 2026 snapshot: credit portfolio, asset quality and funding"
+    },
+    "NU_Q326_PRESENTATION": {
+      "title": "Nu Holdings Q3 2026 earnings presentation, SEC Form 6-K",
+      "published": "2026-11-12",
+      "url": "https://www.sec.gov/Archives/edgar/data/1691493/000129281426005275/nu20261112_6k.htm",
+      "location": "Asset quality, page 16: NPL 90+ history and scope note; glossary page 35: consumer definition; page 25: funding definitions"
+    }
+  }
+}

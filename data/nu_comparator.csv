@@ -1,0 +1,17 @@
+period,metric,value,unit,scope,basis,source_id
+FY2023,credit_growth,47,percent,Nu Holdings consolidated,year_on_year_FX_neutral,NU_FY24
+FY2023,deposit_growth,38,percent,Nu Holdings consolidated,year_on_year_FX_neutral,NU_FY24
+FY2023,net_income,1.0306,USD_billion,Nu Holdings consolidated,full_year_reported_IFRS,NU_FY24
+FY2024,credit_growth,45,percent,Nu Holdings consolidated,year_on_year_FX_neutral,NU_FY24
+FY2024,deposit_growth,55,percent,Nu Holdings consolidated,year_on_year_FX_neutral,NU_FY24
+FY2024,net_income,1.9721,USD_billion,Nu Holdings consolidated,full_year_reported_IFRS,NU_FY24
+FY2025,credit_growth,40,percent,Nu Holdings consolidated,year_on_year_FX_neutral,NU_FY25
+FY2025,deposit_growth,29,percent,Nu Holdings consolidated,year_on_year_FX_neutral,NU_FY25
+FY2025,net_income,2.9,USD_billion,Nu Holdings consolidated,full_year_reported_rounded,NU_FY25
+FY2025,available_funding,38.8,USD_billion,Nu Holdings consolidated,management_defined_stock_at_year_end,NU_FY25
+FY2025,net_credit_portfolio,19.0,USD_billion,Nu Holdings consolidated,management_defined_stock_at_year_end,NU_FY25
+FY2025,excess_capital_operating_entities,2.2,USD_billion,Nu regulated operating entities,reported_excess_above_local_requirements,NU_FY25
+Q32026,credit_growth,33,percent,Nu Holdings consolidated,year_on_year_FX_neutral,NU_Q326
+Q32026,deposit_growth,19,percent,Nu Holdings consolidated,year_on_year_FX_neutral,NU_Q326
+Q32026,npl_90_plus,7.3,percent,Nu reported portfolio (see source scope notes),90_plus_days_past_due_stock,NU_Q326_PRESENTATION
+Q22026,npl_90_plus,6.9,percent,Nu reported portfolio (see source scope notes),90_plus_days_past_due_stock,NU_Q326_PRESENTATION

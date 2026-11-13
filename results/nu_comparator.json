@@ -1,0 +1,23 @@
+{
+  "annual_growth_percent_FXN": [
+    {
+      "period": "FY2023",
+      "credit": 47.0,
+      "deposits": 38.0
+    },
+    {
+      "period": "FY2024",
+      "credit": 45.0,
+      "deposits": 55.0
+    },
+    {
+      "period": "FY2025",
+      "credit": 40.0,
+      "deposits": 29.0
+    }
+  ],
+  "FY2025_available_funding_to_net_credit": 2.0421052631578944,
+  "Q32026_credit_minus_deposit_growth_pp": 14.0,
+  "Q32026_reported_90plus_NPL_change_bps": 40.0,
+  "interpretation": "Descriptive comparator; no regulatory liquidity ratio, matched control, causal estimate or assurance of future resilience."
+}
