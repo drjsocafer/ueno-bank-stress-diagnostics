@@ -1,0 +1,92 @@
+{
+  "cutoff": "2026-11-12",
+  "harmonised": "2026-11-13",
+  "references": [
+    {
+      "text": "[1] Solventa&Riskmétrica, March 2026 accounts; review published 27 April 2026.",
+      "url": "https://www.ueno.com.py/wp-content/uploads/2026/04/Informe-de-Revision-Ueno-Bank-Mar26-1.pdf",
+      "id": 1
+    },
+    {
+      "text": "[2] Banco Central del Paraguay, resolution announcement, 3 November 2026.",
+      "url": "https://www.bcp.gov.py/web/institucional/w/banco-central-inicia-el-procedimiento-de-resolucion-de-ueno-bank",
+      "id": 2
+    },
+    {
+      "text": "[3] Fitch Ratings, Ueno Bank SA, 2 March 2026, financials and key ratios.",
+      "url": "https://www.ueno.com.py/wp-content/uploads/2026/03/Ueno_Bank_Full-Rating-Report_Mar.2026.pdf",
+      "id": 3
+    },
+    {
+      "text": "[4] Fitch Ratings, Outlook revised to Negative, 16 October 2026, pp. 1–3.",
+      "url": "https://www.ueno.com.py/inversores/wp-content/uploads/sites/3/2026/10/Risk-Rating-Report-%E2%80%93-Fitch-Ratings-%E2%80%93-October-2026.pdf",
+      "id": 4
+    },
+    {
+      "text": "[5] S&P Global Ratings, Ueno Bank S.A., 16 December 2025: regulatory and risk-adjusted capital, transitory measures, revenue mix.",
+      "url": "https://www.ueno.com.py/wp-content/uploads/2026/03/Rating-SP-Dec-25.pdf",
+      "id": 5
+    },
+    {
+      "text": "[6] BCP, Financial Stability Report, May 2026.",
+      "url": "https://www.bcp.gov.py/en/web/institucional/w/informe-de-estabilidad-financiera-mayo-2026",
+      "id": 6
+    },
+    {
+      "text": "[7] ABC Color, IPS investment director on deposits at ueno, 7 July 2026.",
+      "url": "https://www.abc.com.py/politica/2026/07/07/director-de-inversiones-del-ips-defiende-depositos-en-ueno-y-explica-por-que-se-retirara-fondos/",
+      "id": 7
+    },
+    {
+      "text": "[8] BCP, advance deposit guarantee payment arrangements, 4 November 2026.",
+      "url": "https://www.bcp.gov.py/web/institucional/w/pago-del-anticipo-de-la-garantia-del-fondo-de-garantia-de-depositos-a-los-ahorristas-de-ueno-bank-s.a.",
+      "id": 8
+    },
+    {
+      "text": "[9] BCP press conference on the fifth payment group, 11 November 2026, as reported by ABC Color.",
+      "url": "https://www.abc.com.py/economia/2026/11/11/ahorristas-de-ueno-bcp-dice-que-culmino-el-proceso-de-acreditacion-al-100-de-beneficiarios-pero-persisten-bloqueos/",
+      "id": 9
+    },
+    {
+      "text": "[10] Nu Holdings, Q3 2026 results, SEC Form 6-K, 12 November 2026.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1691493/000129281426005273/nupr3q26_6k.htm",
+      "id": 10
+    },
+    {
+      "text": "[11] Nu Holdings, FY2024 earnings release, 20 February 2025, pp. 3–4: 2023–2024 growth and net income.",
+      "url": "https://api.mziq.com/mzfilemanager/v2/d/59a081d2-0d63-4bb5-b786-4c07ae26bc74/96c63db0-9faa-9fc7-3818-1193f09600a8?origin=1",
+      "id": 11
+    },
+    {
+      "text": "[12] Nu Holdings, FY2025 results, 25 February 2026: growth, profitability, funding and capital.",
+      "url": "https://nu.com/en/newsroom/company/nu-holdings-ltd-reports-fourth-quarter-and-full-year-2025-financial-results",
+      "id": 12
+    },
+    {
+      "text": "[13] Nu Holdings, Q3 2026 earnings presentation, SEC Form 6-K: metric definitions, scope and NPL bridge.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1691493/000129281426005275/nu20261112_6k.htm",
+      "id": 13
+    },
+    {
+      "text": "[14] Basel Committee, Stress testing principles, RMA30, particularly 30.40–30.43.",
+      "url": "https://www.bis.org/committees/bcbs/basel-consolidated-guidelines/module/rma/30",
+      "id": 14
+    },
+    {
+      "text": "[15] Basel Committee, Capital planning, CAD10.",
+      "url": "https://www.bis.org/committees/bcbs/basel-consolidated-guidelines/module/cad/10",
+      "id": 15
+    },
+    {
+      "text": "[16] Basel Committee, Liquidity risk management and supervision, LQY10.",
+      "url": "https://www.bis.org/committees/bcbs/basel-consolidated-guidelines/module/lqy/10",
+      "id": 16
+    },
+    {
+      "text": "[17] Basel Committee, Principles for operational resilience.",
+      "url": "https://www.bis.org/publications/202103-guidelines-principles-operational-resilience",
+      "id": 17
+    }
+  ],
+  "interpretation": "Primary reports unless labelled press coverage. Publication and observation dates are distinct; the article remains an unpublished LinkedIn draft."
+}

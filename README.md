@@ -1,8 +1,10 @@
-# ueno bank: the stress test before the stress test
+# ueno bank, Nubank and the stress test before the stress test
 
 Reproducible diagnostics by **Dr. Jairo Andrés Socarrás Fernández**. Public-information cutoff: **12 November 2026**.
 
 This repository accompanies a LinkedIn article examining the opening balance sheet, interpretation of reported loan delinquency, and funding sensitivities. It contains independent calculations and synthetic models. It does **not** reconstruct ueno bank's regulatory capital, loan book or liquidity position, and does not estimate a probability of failure.
+
+The text, method notes, figures and executed notebook were harmonised on **13 November 2026**. [METHODOLOGY.md](METHODOLOGY.md) is the interpretation reference: source observations, illustrative calculations and proposed management actions have different evidential status. Different capital methodologies are not contradictory measurements of one quantity. The cohort model does not attribute observed NPL changes at either bank to seasoning. [data/article_sources.json](data/article_sources.json) maps the draft's numbered references; the unpublished article text is not included here.
 
 ## Reproduce the calculations
 
@@ -22,7 +24,7 @@ python3 -m pip install -r requirements-plot.txt
 python3 plot_results.py
 ```
 
-Integrity: `CHECKSUMS.json` lists SHA-256 hashes of the committed files. Output CSV and JSON files are written with LF line endings and floats rounded to 12 significant digits, so rerunning the calculations should reproduce them byte for byte on any platform. The SVG figures are rendered by matplotlib and embed renderer-specific details, so their hashes are not expected to match on another machine or matplotlib build; compare them visually or regenerate them from the CSV files. If a CSV hash differs, compare the numbers.
+Integrity: `CHECKSUMS.json` lists SHA-256 hashes of the committed files. Core synthetic output CSV and JSON files are written with LF line endings and floats rounded to 12 significant digits, so rerunning the calculations should reproduce them byte for byte on any platform. The SVG figures are rendered by matplotlib and embed renderer-specific details, so their hashes are not expected to match on another machine or matplotlib build; compare them visually or regenerate them from the CSV files. If a CSV hash differs, compare the numbers.
 
 Plotting was tested with matplotlib 3.9.2. `Ueno_analysis.ipynb` includes executed code, captured outputs and links to the versioned figures for inspection without rerunning the notebook. Running it assumes the notebook's working directory is this repository's root.
 
@@ -32,10 +34,14 @@ The article now includes a short historical comparator, with sourced observation
 
 ```sh
 python3 comparator.py
+python3 earnings_sensitivity.py
+python3 validate_earnings.py
 python3 plot_comparator.py
 ```
 
-The first command uses only the standard library. The second uses the same optional plotting dependency as the existing figures. [COMPARATOR.md](COMPARATOR.md) explains metric scope, FX neutrality, funding definitions and selection limits; [data/nu_sources.json](data/nu_sources.json) links every primary source. The inputs and derived arithmetic are versioned separately. No cross-bank NPL or liquidity-ratio ranking is made.
+The calculation and validation commands use only the standard library. The plotting command uses the same optional dependency as the existing figures. [COMPARATOR.md](COMPARATOR.md) explains metric scope, FX neutrality, funding definitions and selection limits; [data/nu_sources.json](data/nu_sources.json) links every primary source. The inputs and derived arithmetic are versioned separately. No cross-bank NPL or liquidity-ratio ranking is made.
+
+The accounting calculations also use only the standard library; only the plotting command needs matplotlib. `earnings_sensitivity.py` keeps IFRS ECL expense and pre-tax profit separate from the managerial credit-cost ratios. Its approximately 80.93% break-even expense increase is a frozen-quarter identity, not a capital buffer or dynamic stress result. `EARNINGS_VALIDATION.txt` records the separate accounting checks. `validate_earnings.py` checks that identity and separation of accounting bases. Rebuild the executed notebook with `python3 build_notebook.py` after changing model inputs.
 
 ![Article Figure 3: Nu comparator](figures/figure_3_nu_comparator.svg)
 

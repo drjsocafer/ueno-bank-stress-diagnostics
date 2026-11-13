@@ -16,7 +16,7 @@ These observations suggest questions a growth plan should answer: can earnings s
 
 - Nu is a consolidated group with different jurisdictions and products; ueno's 46.4% is a reported gross-loan growth observation for one Paraguayan bank. Nu's reported FX-neutral rates are indicative of a similar order of growth, not a harmonised cross-bank comparison. Never derive those rates from successive nominal USD balances.
 - Available funding and net credit are management-defined amounts. Nu's presentation defines available funding as deposits less compulsory deposits plus financial bills; net credit nets credit-card-network payables from credit-card receivables and loans. Coverage is not cash, an LCR, an NSFR or a liquidity survival horizon, and is not compared directly with ueno's gross loans/customer deposits.
-- Nu's Reported 90+ day NPL stock and ueno's 60-day NPL observation differ in scope, classification and portfolio mix. Figure 3 therefore does not place them on the same risk axis.
+- Nu's reported 90+ day NPL stock and ueno's 60-day NPL observation differ in scope, classification, dates and portfolio mix. Figure 3 therefore does not place them on the same risk axis. Nu's current presentation refers to all geographies on the total-portfolio chart, while its glossary describes consumer credit excluding SMEs. Preserve the disclosed series and scope notes rather than splicing it into earlier Brazil-only disclosures.
 - Full-year reported net income is used. Nu's FY2025 managerial presentation reorganises revenue/cost categories while preserving net income; those revenue/cost series are not spliced into this comparison. FY2025 net income has the source's rounded precision.
 - A favourable historical example can invite hindsight and survivor bias. The selection is illustrative, not a representative sample of digital banks. Controls, underwriting quality and execution would require further evidence.
 
@@ -25,3 +25,11 @@ These observations suggest questions a growth plan should answer: can earnings s
 In Q3 2026, credit still grew 33% YoY versus deposits at 19%, both FX-neutral. Reported 90+ day NPL rose from 6.9% in Q2 to 7.3% in Q3 (+40 basis points). Deposit growth did not always exceed credit growth in the annual series either. Reported resources must therefore be monitored alongside vintage losses and funding composition; this comparator is not an assurance of continuing resilience.
 
 The script checks source dates, duplicate observations, units, growth basis and metric scope before performing arithmetic. These checks establish internal data consistency, not an audit of issuer disclosures or an empirical validation of the synthetic ueno diagnostics.
+
+## Quarterly earnings: two explicitly separate bases
+
+The expanded article uses `data/nu_quarterly_financials.csv` and `earnings_sensitivity.py`. Q3 2026 IFRS ECL expense is US$1,668.5m and IFRS pre-tax profit US$1,350.3m. Under a frozen-quarter sensitivity, an additional ECL expense equal to that pre-tax profit eliminates it: approximately 80.93% of the starting ECL expense. Every other income and expense stays fixed. This does not model tax, future earnings, liquidity, capital or RWA responses and is not a bank survival test.
+
+Separately, the current SEC release's comparable managerial cost of credit / credit income is 1,035.8 / 2,489.2 = 41.61% for Q3 2025 and 1,788.7 / 3,795.1 = 47.13% for Q3 2026. This ratio is descriptive; its two observations do not identify a future pricing-loss path. Managerial cost of credit is not substituted for IFRS ECL expense.
+
+Read [METHODOLOGY.md](METHODOLOGY.md) for the full evidence framework, including the distinction between allowance stocks, expense flows, realised losses and capital. `validate_earnings.py` checks the break-even identity and rejects mixed accounting bases. The executed notebook includes both calculations and their checks.

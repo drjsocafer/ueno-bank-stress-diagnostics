@@ -42,7 +42,7 @@ L 198.070376 345.6
 L 198.070376 136.618878 
 L 112.32 136.618878 
 z
-" clip-path="url(#p8cdf78f618)" style="fill: #17646b"/>
+" clip-path="url(#p13ba20f134)" style="fill: #17646b"/>
    </g>
    <g id="patch_4">
     <path d="M 372.169624 345.6 
@@ -50,7 +50,7 @@ L 457.92 345.6
 L 457.92 179.634066 
 L 372.169624 179.634066 
 z
-" clip-path="url(#p8cdf78f618)" style="fill: #17646b"/>
+" clip-path="url(#p13ba20f134)" style="fill: #17646b"/>
    </g>
    <g id="patch_5">
     <path d="M 632.019248 345.6 
@@ -58,7 +58,7 @@ L 717.769624 345.6
 L 717.769624 209.314937 
 L 632.019248 209.314937 
 z
-" clip-path="url(#p8cdf78f618)" style="fill: #17646b"/>
+" clip-path="url(#p13ba20f134)" style="fill: #17646b"/>
    </g>
    <g id="patch_6">
     <path d="M 198.070376 345.6 
@@ -66,7 +66,7 @@ L 283.820752 345.6
 L 283.820752 181.538834 
 L 198.070376 181.538834 
 z
-" clip-path="url(#p8cdf78f618)" style="fill: #97b4ad"/>
+" clip-path="url(#p13ba20f134)" style="fill: #97b4ad"/>
    </g>
    <g id="patch_7">
     <path d="M 457.92 345.6 
@@ -74,7 +74,7 @@ L 543.670376 345.6
 L 543.670376 195.552011 
 L 457.92 195.552011 
 z
-" clip-path="url(#p8cdf78f618)" style="fill: #97b4ad"/>
+" clip-path="url(#p13ba20f134)" style="fill: #97b4ad"/>
    </g>
    <g id="patch_8">
     <path d="M 717.769624 345.6 
@@ -82,7 +82,7 @@ L 803.52 345.6
 L 803.52 214.641001 
 L 717.769624 214.641001 
 z
-" clip-path="url(#p8cdf78f618)" style="fill: #97b4ad"/>
+" clip-path="url(#p13ba20f134)" style="fill: #97b4ad"/>
    </g>
    <g id="matplotlib.axis_1">
     <g id="xtick_1">
@@ -974,7 +974,7 @@ z
    <g id="line2d_10">
     <path d="M 77.76 308.736 
 L 838.08 308.736 
-" clip-path="url(#p8cdf78f618)" style="fill: none; stroke-dasharray: 5.92,2.56; stroke-dashoffset: 0; stroke: #a04a3b; stroke-width: 1.6"/>
+" clip-path="url(#p13ba20f134)" style="fill: none; stroke-dasharray: 5.92,2.56; stroke-dashoffset: 0; stroke: #a04a3b; stroke-width: 1.6"/>
    </g>
    <g id="patch_9">
     <path d="M 77.76 345.6 
@@ -2216,7 +2216,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p8cdf78f618">
+  <clipPath id="p13ba20f134">
    <rect x="77.76" y="78.336" width="760.32" height="267.264"/>
   </clipPath>
  </defs>

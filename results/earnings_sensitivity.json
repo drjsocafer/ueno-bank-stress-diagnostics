@@ -1,0 +1,52 @@
+{
+  "scope": "Nu Holdings consolidated",
+  "period": "Q32026",
+  "IFRS_ECL_expense_USD_million": 1668.5,
+  "IFRS_profit_before_tax_USD_million": 1350.3,
+  "additional_ECL_expense_to_zero_PBT_USD_million": 1350.3,
+  "proportional_ECL_expense_increase_to_zero_PBT": 0.809289781241,
+  "managerial_ratios_separate_basis": [
+    {
+      "period": "Q32025",
+      "cost_of_credit_over_credit_income": 0.416117628154
+    },
+    {
+      "period": "Q32026",
+      "cost_of_credit_over_credit_income": 0.471318278833
+    }
+  ],
+  "managerial_ratio_change_percentage_points": 5.52006506796,
+  "frozen_quarter_scenarios": [
+    {
+      "increase_in_IFRS_ECL_expense": 0.0,
+      "incremental_ECL_expense_USD_million": 0.0,
+      "profit_before_tax_USD_million": 1350.3
+    },
+    {
+      "increase_in_IFRS_ECL_expense": 0.2,
+      "incremental_ECL_expense_USD_million": 333.7,
+      "profit_before_tax_USD_million": 1016.6
+    },
+    {
+      "increase_in_IFRS_ECL_expense": 0.5,
+      "incremental_ECL_expense_USD_million": 834.25,
+      "profit_before_tax_USD_million": 516.05
+    },
+    {
+      "increase_in_IFRS_ECL_expense": 0.8,
+      "incremental_ECL_expense_USD_million": 1334.8,
+      "profit_before_tax_USD_million": 15.5
+    },
+    {
+      "increase_in_IFRS_ECL_expense": 0.809289781241,
+      "incremental_ECL_expense_USD_million": 1350.3,
+      "profit_before_tax_USD_million": 0.0
+    },
+    {
+      "increase_in_IFRS_ECL_expense": 1.0,
+      "incremental_ECL_expense_USD_million": 1668.5,
+      "profit_before_tax_USD_million": -318.2
+    }
+  ],
+  "interpretation": "Only IFRS ECL expense changes; all other quarterly income and expenses are fixed. No tax response, future path, capital, RWA or liquidity reaction is modelled. Managerial cost of credit is not substituted for IFRS ECL expense."
+}

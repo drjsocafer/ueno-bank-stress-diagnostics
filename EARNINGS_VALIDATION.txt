@@ -1,0 +1,4 @@
+PASS: frozen-quarter incremental IFRS ECL expense eliminates pre-tax profit.
+PASS: mixed managerial/IFRS input is rejected.
+PASS: managerial credit costs do not alter the separate IFRS sensitivity.
+These are arithmetic and accounting-basis checks, not empirical bank validation.
