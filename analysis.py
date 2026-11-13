@@ -100,7 +100,7 @@ def growth_capacity(capital=15., opening_rwa=100., target=.15,
 
 def write_csv(name, rows):
     with (OUT/name).open('w', newline='') as f:
-        w=csv.DictWriter(f, fieldnames=list(rows[0])); w.writeheader(); w.writerows(rows)
+        w=csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator='\n'); w.writeheader(); w.writerows(rows)
 
 class Checks(unittest.TestCase):
     def test_capital_identity_and_inversion(self):
