@@ -15,3 +15,17 @@ Q32026,credit_growth,33,percent,Nu Holdings consolidated,year_on_year_FX_neutral
 Q32026,deposit_growth,19,percent,Nu Holdings consolidated,year_on_year_FX_neutral,NU_Q326
 Q32026,npl_90_plus,7.3,percent,Nu reported portfolio (see source scope notes),90_plus_days_past_due_stock,NU_Q326_PRESENTATION
 Q22026,npl_90_plus,6.9,percent,Nu reported portfolio (see source scope notes),90_plus_days_past_due_stock,NU_Q326_PRESENTATION
+Q32025,credit_growth,42,percent,Nu Holdings consolidated,year_on_year_FX_neutral,NU_Q325
+Q32025,npl_90_plus,6.7,percent,Nu reported portfolio (see source scope notes),90_plus_days_past_due_stock,NU_Q326
+Q32025,total_portfolio,30.4,USD_billion,Nu Holdings consolidated,quarter_end_stock_reported_USD,NU_Q326
+Q32025,deposits,38.8,USD_billion,Nu Holdings consolidated,quarter_end_stock_reported_USD,NU_Q326
+Q32025,credit_income,2489.2,USD_million,Nu Holdings consolidated,quarterly_managerial_PnL,NU_Q326
+Q32025,cost_of_credit,1035.8,USD_million,Nu Holdings consolidated,quarterly_managerial_PnL,NU_Q326
+Q32026,total_portfolio,41.6,USD_billion,Nu Holdings consolidated,quarter_end_stock_reported_USD,NU_Q326
+Q32026,deposits,47.5,USD_billion,Nu Holdings consolidated,quarter_end_stock_reported_USD,NU_Q326
+Q32026,credit_income,3795.1,USD_million,Nu Holdings consolidated,quarterly_managerial_PnL,NU_Q326
+Q32026,cost_of_credit,1788.7,USD_million,Nu Holdings consolidated,quarterly_managerial_PnL,NU_Q326
+Q32026,total_revenue_managerial,6258.5,USD_million,Nu Holdings consolidated,quarterly_managerial_PnL,NU_Q326
+Q32026,expected_credit_loss_ifrs,1668.5,USD_million,Nu Holdings consolidated,quarterly_IFRS_PnL,NU_Q326
+Q32026,profit_before_tax_ifrs,1350.3,USD_million,Nu Holdings consolidated,quarterly_IFRS_PnL,NU_Q326
+Q32026,coverage_90_plus,234,percent,Nu reported portfolio (see source scope notes),allowance_over_90_plus_stock,NU_Q326

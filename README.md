@@ -30,7 +30,7 @@ Plotting was tested with matplotlib 3.9.2. `Ueno_analysis.ipynb` includes execut
 
 ### Comparative case: Nubank
 
-The article now includes a short historical comparator, with sourced observations separated from the synthetic models. Nu reported FX-neutral credit-card and loan growth of 47%, 45% and 40% in 2023–2025, alongside annual profits and reported funding/capital resources. Its latest Q3 2026 disclosure also shows higher 90+ day NPLs and credit growth exceeding deposit growth. This is an informative example with explicit limits, not a matched control or proof of future safety.
+The article now includes a short historical comparator, with sourced observations separated from the synthetic models. Nu reported FX-neutral credit-card and loan growth of 47%, 45% and 40% in 2023–2025, alongside annual profits and reported funding/capital resources. Its latest Q3 2026 disclosure also shows higher 90+ day NPLs, credit growth exceeding deposit growth and a higher managerial credit-cost/income ratio alongside positive quarterly profit. Supplementary quarterly observations and same-basis ratios are included in `data/nu_comparator.csv` and `comparator.py`. This is an informative example with explicit limits, not a matched control or proof of future safety.
 
 ```sh
 python3 comparator.py
