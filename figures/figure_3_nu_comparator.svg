@@ -42,7 +42,7 @@ L 127.263524 357.12
 L 127.263524 197.872941 
 L 82.539845 197.872941 
 z
-" clip-path="url(#p2cf2ed7bc4)" style="fill: #17646b"/>
+" clip-path="url(#p5a8c9d3ada)" style="fill: #17646b"/>
    </g>
    <g id="patch_4">
     <path d="M 206.772288 357.12 
@@ -50,7 +50,7 @@ L 251.495968 357.12
 L 251.495968 204.649412 
 L 206.772288 204.649412 
 z
-" clip-path="url(#p2cf2ed7bc4)" style="fill: #17646b"/>
+" clip-path="url(#p5a8c9d3ada)" style="fill: #17646b"/>
    </g>
    <g id="patch_5">
     <path d="M 331.004731 357.12 
@@ -58,7 +58,7 @@ L 375.728411 357.12
 L 375.728411 221.590588 
 L 331.004731 221.590588 
 z
-" clip-path="url(#p2cf2ed7bc4)" style="fill: #17646b"/>
+" clip-path="url(#p5a8c9d3ada)" style="fill: #17646b"/>
    </g>
    <g id="patch_6">
     <path d="M 129.748173 357.12 
@@ -66,7 +66,7 @@ L 174.471853 357.12
 L 174.471853 228.367059 
 L 129.748173 228.367059 
 z
-" clip-path="url(#p2cf2ed7bc4)" style="fill: #a3bbb2"/>
+" clip-path="url(#p5a8c9d3ada)" style="fill: #a3bbb2"/>
    </g>
    <g id="patch_7">
     <path d="M 253.980616 357.12 
@@ -74,7 +74,7 @@ L 298.704296 357.12
 L 298.704296 170.767059 
 L 253.980616 170.767059 
 z
-" clip-path="url(#p2cf2ed7bc4)" style="fill: #a3bbb2"/>
+" clip-path="url(#p5a8c9d3ada)" style="fill: #a3bbb2"/>
    </g>
    <g id="patch_8">
     <path d="M 378.21306 357.12 
@@ -82,7 +82,7 @@ L 422.936739 357.12
 L 422.936739 258.861176 
 L 378.21306 258.861176 
 z
-" clip-path="url(#p2cf2ed7bc4)" style="fill: #a3bbb2"/>
+" clip-path="url(#p5a8c9d3ada)" style="fill: #a3bbb2"/>
    </g>
    <g id="matplotlib.axis_1">
     <g id="xtick_1">
@@ -1627,7 +1627,7 @@ L 836.153903 238.987636
 L 836.153903 198.772364 
 L 572.96297 198.772364 
 z
-" clip-path="url(#pb1c8358597)" style="fill: #17646b"/>
+" clip-path="url(#p2813f2b433)" style="fill: #17646b"/>
    </g>
    <g id="patch_15">
     <path d="M 572.96297 322.769455 
@@ -1635,7 +1635,7 @@ L 701.845128 322.769455
 L 701.845128 282.554182 
 L 572.96297 282.554182 
 z
-" clip-path="url(#pb1c8358597)" style="fill: #a3bbb2"/>
+" clip-path="url(#p2813f2b433)" style="fill: #a3bbb2"/>
    </g>
    <g id="matplotlib.axis_3">
     <g id="xtick_4">
@@ -3718,10 +3718,10 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p2cf2ed7bc4">
+  <clipPath id="p5a8c9d3ada">
    <rect x="65.52" y="126.72" width="374.436584" height="230.4"/>
   </clipPath>
-  <clipPath id="pb1c8358597">
+  <clipPath id="p2813f2b433">
    <rect x="572.96297" y="126.72" width="325.59703" height="230.4"/>
   </clipPath>
  </defs>

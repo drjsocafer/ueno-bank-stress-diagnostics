@@ -5,43 +5,43 @@
     {
       "term_months": 36,
       "growth": 0,
-      "npl_ratio": 0.02267590299447401
+      "npl_ratio": 0.0226759029945
     },
     {
       "term_months": 36,
       "growth": 0.464,
-      "npl_ratio": 0.01800845640020617
+      "npl_ratio": 0.0180084564002
     },
     {
       "term_months": 36,
       "growth": 1,
-      "npl_ratio": 0.01478787573483654
+      "npl_ratio": 0.0147878757348
     },
     {
       "term_months": 60,
       "growth": 0,
-      "npl_ratio": 0.01780177577223566
+      "npl_ratio": 0.0178017757722
     },
     {
       "term_months": 60,
       "growth": 0.464,
-      "npl_ratio": 0.016281248786229666
+      "npl_ratio": 0.0162812487862
     },
     {
       "term_months": 60,
       "growth": 1,
-      "npl_ratio": 0.0142099608402565
+      "npl_ratio": 0.0142099608403
     }
   ],
   "relative_change_growth_46_4_pct": [
-    -38.80090853605146,
-    27.96616126919007
+    -38.8009085361,
+    27.9661612692
   ],
   "capital_thresholds": [
     {
       "rwa_change": -0.1,
       "target": 0.12,
-      "max_correction": 0.041999999999999996
+      "max_correction": 0.042
     },
     {
       "rwa_change": -0.1,
@@ -61,12 +61,12 @@
     {
       "rwa_change": 0.1,
       "target": 0.12,
-      "max_correction": 0.017999999999999988
+      "max_correction": 0.018
     },
     {
       "rwa_change": 0.1,
       "target": 0.06,
-      "max_correction": 0.08399999999999999
+      "max_correction": 0.084
     },
     {
       "rwa_change": 0.25,
@@ -86,7 +86,7 @@
     },
     {
       "runoff": 0.05,
-      "loan_deposit_ratio": 0.9673684210526317
+      "loan_deposit_ratio": 0.967368421053
     },
     {
       "runoff": 0.081,
@@ -94,7 +94,7 @@
     },
     {
       "runoff": 0.1,
-      "loan_deposit_ratio": 1.021111111111111
+      "loan_deposit_ratio": 1.02111111111
     },
     {
       "runoff": 0.2,
@@ -102,18 +102,18 @@
     },
     {
       "runoff": 0.3,
-      "loan_deposit_ratio": 1.312857142857143
+      "loan_deposit_ratio": 1.31285714286
     }
   ],
   "pd_fitting_0_4_pct_range": [
-    0.004994374578987411,
-    0.06638255871439763
+    0.00499437457899,
+    0.0663825587144
   ],
   "growth_transition": {
-    "month_0": 0.01800845640020617,
-    "month_24": 0.022220365824425572,
-    "month_48": 0.02267590299447401,
-    "fraction_of_total_rise_after_24m": 0.9024012035600169
+    "month_0": 0.0180084564002,
+    "month_24": 0.0222203658244,
+    "month_48": 0.0226759029945,
+    "fraction_of_total_rise_after_24m": 0.90240120356
   },
   "capital_only_growth_capacity": [
     {
@@ -122,7 +122,7 @@
       "opening_rwa": 100,
       "target": 0.15,
       "retained_earnings": 1.5,
-      "max_rwa_growth": 0.10000000000000009
+      "max_rwa_growth": 0.1
     },
     {
       "correction": 1,
@@ -130,7 +130,7 @@
       "opening_rwa": 100,
       "target": 0.15,
       "retained_earnings": 1.5,
-      "max_rwa_growth": 0.03333333333333344
+      "max_rwa_growth": 0.0333333333333
     },
     {
       "correction": 2,
@@ -138,11 +138,10 @@
       "opening_rwa": 100,
       "target": 0.15,
       "retained_earnings": 1.5,
-      "max_rwa_growth": -0.033333333333333326
+      "max_rwa_growth": -0.0333333333333
     }
   ],
   "fitch_ye25_capital_definition_gap_bps": 490,
-  "reported_provisions_over_ye25_impaired_loans": 32.23463566744842,
   "checks_run": 7,
   "checks_passed": true
 }
